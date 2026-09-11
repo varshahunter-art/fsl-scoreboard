@@ -1,0 +1,72 @@
+[
+  {
+    "key": "Araceli",
+    "captain": "Araceli Murray",
+    "team": "Money Murray",
+    "abbr": "HEA",
+    "c1": "#b0332a",
+    "c2": "#3a120d",
+    "crest": "🔥",
+    "flex": "Flex · WR"
+  },
+  {
+    "key": "Matt",
+    "captain": "Matt Hammond",
+    "team": "Hammond Hammers",
+    "abbr": "HAM",
+    "c1": "#1d3f7a",
+    "c2": "#0b1e3d",
+    "crest": "⚒",
+    "flex": "Flex · RB"
+  },
+  {
+    "key": "Richard",
+    "captain": "Richard Durval",
+    "team": "Durval Dynamos",
+    "abbr": "DYN",
+    "c1": "#1f6b63",
+    "c2": "#0c2d2a",
+    "crest": "⚡",
+    "flex": "Flex · TE"
+  },
+  {
+    "key": "Kramer",
+    "captain": "Chris Kramer",
+    "team": "Kramer Kings",
+    "abbr": "KNG",
+    "c1": "#c8962e",
+    "c2": "#4a3410",
+    "crest": "♔",
+    "flex": "Flex · WR"
+  },
+  {
+    "key": "Andrew",
+    "captain": "Andrew Maliwat",
+    "team": "Maliwat Monarchs",
+    "abbr": "MON",
+    "c1": "#6e3d78",
+    "c2": "#2a1730",
+    "crest": "👑",
+    "flex": "Flex · TE"
+  },
+  {
+    "key": "Casey",
+    "captain": "Casey Clark",
+    "team": "Clark Cobras",
+    "abbr": "COB",
+    "c1": "#2f7d4a",
+    "c2": "#0d2e1c",
+    "crest": "🐍",
+    "flex": "Flex · RB"
+  },
+  {
+    "key": "Lauren",
+    "captain": "Lauren Barr",
+    "team": "Barr Barons",
+    "abbr": "BAR",
+    "c1": "#d15b7a",
+    "c2": "#2e1424",
+    "crest": "🦅",
+    "flex": "Flex · RB"
+  }
+]
