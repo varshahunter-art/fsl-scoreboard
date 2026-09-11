@@ -271,16 +271,16 @@ const NAME_MAP = { 'Araceli Hernandez': 'Araceli Murray' };
 
 const COLUMN_MAP = {
   'Specialist User Name':  '__name__',
-  'Closed Won Amount':     'closed_won_amount',
+  'SFR Amount':            'closed_won_amount',
   'Deal Count':            'deal_count',
   'Distinct Customers':    'distinct_customers',
-  'Pipe Gen Amount':       'pipe_gen_amount',
+  'SFR Pipe Gen Amount':   'pipe_gen_amount',
   'Create & Close Amount': 'create_close_amount',
   'Create & Close Deals':  'create_close_deals',
   'Fast Closes':           'fast_closes',
   'Flex Credit Amount':    'flex_credit_amount',
   'Big Bets':              'big_bets',
-  'ACV Above 50K':         'acv_above_50k',
+  'ACV Above $50k':        'acv_above_50k',
   'Top Deal':              'top_deal_amount',
   'Smallest Deal':         'smallest_deal_amount',
   'Tagged Plays':          'tagged_plays',
@@ -642,12 +642,18 @@ function escapeHtml(s){
 }
 
 // --- Live Tableau data path -------------------------------------------------
+// Strip Tableau's aggregation wrappers so both "SFR Amount" and "SUM(SFR Amount)"
+// look up the same entry in COLUMN_MAP.
+function bareFieldName(name){
+  return String(name || '').replace(/^(SUM|AGG|MIN|MAX|COUNTD?|AVG|MEDIAN|ATTR|STDEV|VAR)\((.+)\)$/i, '$2');
+}
+
 async function stagingFromWorksheet(ws){
   const table = await ws.getSummaryDataAsync({ ignoreSelection: true });
   const cols = table.columns;
   const idxByStagingKey = {};
   for (const c of cols){
-    const mapped = COLUMN_MAP[c.fieldName];
+    const mapped = COLUMN_MAP[c.fieldName] || COLUMN_MAP[bareFieldName(c.fieldName)];
     if (mapped) idxByStagingKey[mapped] = c.index;
   }
   if (idxByStagingKey.__name__ == null){
